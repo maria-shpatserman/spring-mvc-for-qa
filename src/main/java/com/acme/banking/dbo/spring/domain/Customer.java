@@ -4,26 +4,35 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.PositiveOrZero;
+
 @JsonPropertyOrder({ "id", "name" })
+//@Entity
 public class Customer {
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) @PositiveOrZero
+    private long id;
     private String name;
 
-    public Customer(@JsonProperty("id") int id, @JsonProperty("name") String name) {
+    public Customer(@JsonProperty("id") long id, @JsonProperty("name") String name) {
         this.id = id;
         this.name = name;
     }
 
 
     /** No-arg constructor needed by JPA */
-//    public Customer() { }
+    public Customer() { }
 
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

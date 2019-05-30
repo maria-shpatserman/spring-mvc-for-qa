@@ -4,6 +4,7 @@ import com.acme.banking.dbo.spring.domain.Account;
 import com.acme.banking.dbo.spring.domain.CheckingAccount;
 import com.acme.banking.dbo.spring.domain.SavingAccount;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Ignore;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-
+@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT) //TODO @LocalServerPort if RANDOM_PORT
 @AutoConfigureMockMvc

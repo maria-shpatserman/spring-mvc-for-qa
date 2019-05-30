@@ -2,7 +2,9 @@ package com.acme.banking.dbo.spring.it;
 
 
 import com.acme.banking.dbo.spring.dao.AccountRepository;
+import com.acme.banking.dbo.spring.dao.CustomerRepository;
 import com.acme.banking.dbo.spring.domain.SavingAccount;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,10 +29,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //TODO @SpringBootTest VS @WebMvcTest(MyController.class): focus only on the web layer and not start a complete ApplicationContext
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK) //TODO Semantics of MOCK: No servlet container started
 @AutoConfigureMockMvc
+@Ignore
 public class AccountControllerIT {
     @Autowired private MockMvc mockMvc; //TODO Exception handling issue: https://github.com/spring-projects/spring-boot/issues/7321#issuecomment-261343803
     @Autowired private Logger logger;
     @MockBean private AccountRepository accounts; //TODO MockBean semantics
+    @MockBean private CustomerRepository customers; //TODO MockBean semantics
     //TODO If not @SpringBootTest use @TestExecutionListeners(MockitoTestExecutionListener.class)
     //TODO @SpyBean semantics
 
