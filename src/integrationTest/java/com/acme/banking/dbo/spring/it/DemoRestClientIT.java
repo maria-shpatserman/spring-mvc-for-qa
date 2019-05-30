@@ -1,5 +1,6 @@
 package com.acme.banking.dbo.spring.it;
 
+import com.acme.banking.dbo.spring.controller.SuperAccountController;
 import com.acme.banking.dbo.spring.service.AccountCheckService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 public class DemoRestClientIT {
     @Autowired AccountCheckService accountCheckService;
     @Autowired private MockRestServiceServer mockServer;
+
 
     @Test
     public void shouldRespondTrueIfEmailIsValid() {

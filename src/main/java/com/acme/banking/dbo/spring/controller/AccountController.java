@@ -48,6 +48,7 @@ public class AccountController {
      */
     @GetMapping(path = "/accounts/{id}", headers = "X-API-VERSION=1")
     public ResponseEntity<Account> getAccount(@PathVariable @PositiveOrZero(message = "No negative id!") long id) {
+
         return accounts.findById(id)
                 .map(account -> new ResponseEntity<>(account, HttpStatus.FOUND))
                 .orElseThrow(() -> new ResponseStatusException(
